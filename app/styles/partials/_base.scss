@@ -57,31 +57,35 @@ p {
 
 a {
   color: $font-color;
-  position: relative;
   text-decoration: none;
 
-  &::before {
-    background-color: #FFFAAD;
-    bottom: 0;
-    content: ' ';
-    height: 2.5rem;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-    transition: .15s height ease-out;
-    width: 105%;
-    z-index: -1;
+  span {
+    position: relative;
+
+    &::before {
+      background-color: #FFFAAD;
+      bottom: 0;
+      content: ' ';
+      height: 2.5rem;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      transition: .15s height ease-out;
+      width: 105%;
+      z-index: -1;
+    }
   }
 
-  &.ai::before {
+
+  &.ai span::before {
     background-color: #cf649a;
   }
 
-  &.medium::before {
+  &.medium span::before {
     background-color: #009E74;
   }
 
-  &:hover::before {
+  &:hover span::before {
     height: 5rem;
   }
 }
@@ -166,7 +170,7 @@ and (max-device-width : 480px) {
   margin-left: $page-margin;
   margin-top: $page-margin;
   max-width: 120rem;
-  width: 85%;
+  width: calc(85% - #{$page-margin});
 }
 
 .media {
@@ -175,7 +179,7 @@ and (max-device-width : 480px) {
   max-width: 120rem;
   right: $page-margin;
   top: 0;
-  width: 85%;
+  width: calc(85% - #{$page-margin});
   z-index: -10;
 
   img {
