@@ -9,9 +9,9 @@ let $ = (query) => {
 };
 
 
-// Exploit the order
 var $$content = $('.content a');
 var $$image = $('[data-image]');
+var $more = $('.more');
 
 var showMatchingImage = function(content) {
   if (content !== ''){
@@ -35,3 +35,7 @@ for (var i=0; i<$$content.length; i++) {
     removeMatchingImage(e.target.className);
   });
 }
+
+$more.addEventListener('click', function(e) {
+
+});

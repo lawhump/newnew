@@ -63,7 +63,8 @@ a {
     position: relative;
 
     &::before {
-      background-color: #FFFAAD;
+      background-color: slategray;
+      // background-color: #FFFAAD;
       bottom: 0;
       content: ' ';
       height: 2.5rem;
@@ -78,11 +79,13 @@ a {
 
 
   &.ai span::before {
-    background-color: #cf649a;
+    background-color: slategray;
+    // background-color: #cf649a;
   }
 
   &.medium span::before {
-    background-color: #009E74;
+    background-color: slategray;
+    // background-color: #009E74;
   }
 
   &:hover span::before {
@@ -96,6 +99,17 @@ figure {
 
   img {
     display: block;
+  }
+}
+
+.more {
+  color: lighten($font-color, 40);
+  cursor: pointer;
+  font-style: italic;
+  transition: .3s color ease-out;
+
+  &:hover {
+    color: lighten($font-color, 25);
   }
 }
 
