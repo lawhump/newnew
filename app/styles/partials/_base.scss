@@ -5,7 +5,7 @@ html {
 body {
   background-image: url(../../images/pattern-lite.png);
   background-repeat: repeat;
-  color: #333;
+  color: $font-color-lite;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 1.6rem;
   height: 100vh;
@@ -13,6 +13,11 @@ body {
   overflow-y: hidden;
   position: relative;
   text-rendering: optimizeLegibility;
+
+  &.dark {
+    background-image: url(../../images/pattern-dark.png);
+    color: $font-color-dark;
+  }
 }
 
 body, html {
@@ -56,17 +61,19 @@ p {
 }
 
 a {
-  color: $font-color;
-  text-decoration: none;
+  color: $font-color-lite;
+  text-decoration-color: slategray;
+  transition: .15s background ease-out, .15s color ease-out;
+  // text-decoration: none;
 
   span {
     position: relative;
 
     &::before {
-      background-color: slategray;
+      background-color: $color-accent;
       // background-color: #FFFAAD;
       bottom: 0;
-      content: ' ';
+      // content: ' ';
       height: 2.5rem;
       left: 50%;
       position: absolute;
@@ -79,17 +86,37 @@ a {
 
 
   &.ai span::before {
-    background-color: slategray;
-    // background-color: #cf649a;
+    // background-color: slategray;
+    background-color: #cf649a;
   }
 
   &.medium span::before {
-    background-color: slategray;
-    // background-color: #009E74;
+    // background-color: slategray;
+    background-color: #009E74;
+  }
+
+  &.spotify span::before {
+    // background-color: slategray;
+    background-color: #009E74;
   }
 
   &:hover span::before {
     height: 5rem;
+  }
+
+  &:hover {
+    background: slategray;
+    color: white;
+  }
+}
+
+.dark {
+  a {
+    color: $font-color-dark;
+
+    &:hover {
+      color: black;
+    }
   }
 }
 
@@ -103,13 +130,14 @@ figure {
 }
 
 .more {
-  color: lighten($font-color, 40);
-  cursor: pointer;
-  font-style: italic;
+  // color: lighten($font-color, 40);
+  font-family: serif;
+  font-weight: lighter;
   transition: .3s color ease-out;
 
   &:hover {
-    color: lighten($font-color, 25);
+    color: lighten($font-color-lite, 25);
+    cursor: url(../../images/test.png), auto;
   }
 }
 
@@ -200,4 +228,8 @@ and (max-device-width : 480px) {
     float: right;
     max-width: 90rem;
   }
+}
+
+.reduce {
+  // display: none;
 }
