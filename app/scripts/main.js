@@ -8,34 +8,28 @@ let $ = (query) => {
   return res;
 };
 
-
-var $$content = $('.content a');
-var $$image = $('[data-image]');
-var $more = $('.more');
-
-var showMatchingImage = function(content) {
-  if (content !== ''){
-    $('[data-image=' + content + ']').classList.remove('hidden');
-  }
-};
-
-var removeMatchingImage = function(content) {
-  if (content !== ''){
-    $('[data-image=' + content + ']').classList.add('hidden');
-  }
-};
+var $footer = $('footer');
+var $$btns = $('li .btn');
 
 
+var getMarkup = function(page, callback) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+        callback(xmlHttp.responseText);
+        console.log(xmlHttp.responseText);
+      }
+    }
+    // TODO
+    xmlHttp.open('GET', page, true); // true for asynchronous
+    xmlHttp.send(null);
+  };
 
-for (var i=0; i<$$content.length; i++) {
-  $$content[i].addEventListener('mouseenter', function(e) {
-    showMatchingImage(e.target.className);
-  });
-  $$content[i].addEventListener('mouseleave', function(e) {
-    removeMatchingImage(e.target.className);
+
+for (var i=0; i<$$btns.length; i++) {
+  var page = $$btns[i].dataset.url;
+  page = 'markup/' + page + '.html';
+  $$btns[i].addEventListener('click', function() {
+    getMarkup(page);
   });
 }
-
-$more.addEventListener('click', function(e) {
-
-});
