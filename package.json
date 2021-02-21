@@ -4,7 +4,8 @@
     "node": ">=4"
   },
   "dependencies": {
-    "modernizr": "^3.7.1"
+    "modernizr": "^3.7.1",
+    "node-sass": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
