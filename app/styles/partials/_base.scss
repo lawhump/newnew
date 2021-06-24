@@ -3,13 +3,15 @@ html {
 }
 
 body {
-  border-left: 15px solid #111;
-  border-right: 15px solid #111;
-  border-top: 15px solid #111;
+  border-left: 3rem solid #111;
+  border-right: 3rem solid #111;
+  border-top: 1.5rem solid #111;
+  border-bottom: 1.5rem solid #111;
   color: $font-color-lite;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 1.6rem;
   line-height: 2.56rem;
+  min-height: calc(100vh - 30px);
   position: relative;
   text-rendering: optimizeLegibility;
 
@@ -17,10 +19,6 @@ body {
     // background-image: url(../../images/pattern-dark.png);
     // color: $font-color-dark;
   }
-}
-
-body, html {
-  // border: none;
 }
 
 body,h1,h2,h3,h4,h5,h6,html,p {
@@ -87,10 +85,11 @@ figure {
 
 footer {
   padding: 10rem 0;
+  text-align: center;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .clear {
@@ -103,4 +102,74 @@ and (max-device-width : 480px) {
 	html {
     font-size: 52.5%;
   }
+}
+
+@include keyframes(fadeIn) {
+  0%   {
+    display: none;
+    opacity: 0;
+  }
+  1%   {
+    display: block;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeOut) {
+  0%   {
+    display: block;
+    opacity: 1;
+  }
+  99%  {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@include keyframes(loadIn) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  @include animation('fadeIn .5s ease-in-out');
+  animation-fill-mode: forwards;
+}
+
+.fadeOut {
+  @include animation('fadeOut .3s ease-out');
+  animation-fill-mode: forwards;
+}
+
+.loadIn {
+  @include animation('loadIn .3s ease-out');
+  animation-fill-mode: forwards;
+
+  opacity: 0;
+}
+
+.invis {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.delay-1 {
+  animation-delay: 1s;
+}
+
+.delay-2 {
+  animation-delay: 3s;
+}
+
+.delay-3 {
+  animation-delay: 4s;
 }
