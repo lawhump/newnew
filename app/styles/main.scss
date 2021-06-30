@@ -36,6 +36,7 @@
   margin-top: 3em;
 }
 
+
 .bio {
   .dropdown-btn {
     padding-left: 2rem;
@@ -259,20 +260,6 @@
 
 .h1 {
   margin: 2rem 2rem 2rem -4px;
-}
-
-.link {
-  display: inline;
-  border: 1px none #000;
-  -webkit-transition: border 200ms ease-out;
-  transition: border 200ms ease-out;
-  font-size: 3rem;
-  font-weight: 300;
-}
-
-.link:hover {
-  border-bottom-color: #f9da8f;
-  color: #e3e3d8;
 }
 
 @media screen and (max-width: map-get($breakpoints, "md")) {
