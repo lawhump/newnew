@@ -84,16 +84,15 @@
     cursor: pointer;
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 1.5rem;
-    padding-bottom: 2rem;
+    margin-bottom: 0;
+    padding-bottom: .5rem;
     border-bottom: solid 1px $color_offwhite;
   }
 
   .bio-extra {
     display: none;
     margin-bottom: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid #f7f7f7;
@@ -120,6 +119,9 @@
   }
 }
 
+.blurb .link {
+  margin-bottom: 2rem;
+}
 
 .gigs-container {
   display: block;
@@ -228,27 +230,6 @@
   color: $color_accent;
 }
 
-.column {
-  position: static;
-  display: inline-block;
-}
-
-.column-2 {
-  display: inline-block;
-}
-
-.columns-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-height: 6rem;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-}
-
 .footer {
   margin-top: 1rem;
   margin-bottom: 3rem;
@@ -263,26 +244,8 @@
 }
 
 @media screen and (max-width: map-get($breakpoints, "md")) {
-  .container {
-  }
-
   .gig {
     margin-bottom: 1.5rem;
-  }
-
-  .column {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  .column-2 {
-    padding-right: 10px;
-    padding-left: 10px;
-    text-align: right;
-  }
-
-  .link {
-    font-size: 2.2rem;
   }
 }
 
@@ -316,9 +279,17 @@
   }
 
   .container {
-    max-width: 98.5%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .bio-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .bio .dropdown-btn .chevron-svg {
+    width: 3rem;
   }
 
   .date {

@@ -30,8 +30,8 @@ $container-sizes: (
 .container {
   margin: 0 auto;
   max-width: 1200px;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
 
   &:not(.is-fluid) {
     margin: 0 auto;
